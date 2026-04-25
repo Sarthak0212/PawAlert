@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F0F1A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- ── Header ── -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="🐾"
+            android:textSize="48sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Report an Animal"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#FF6B35"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.03"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp"
+            android:text="Help an animal in distress"
+            android:textSize="13sp"
+            android:textColor="#99AABB"
+            android:gravity="center"/>
+
+        <!-- ── Card ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp">
+
+            <!-- ─── IMAGE SECTION ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animal Photo"
+                android:textColor="#99AABB"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Image Preview -->
+            <ImageView
+                android:id="@+id/iv_report_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/input_background"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_camera"
+                android:contentDescription="Selected animal photo preview"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Image action buttons: Upload (gallery) + Capture (camera) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:id="@+id/btn_upload_image"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="🖼  Gallery"
+                    android:textColor="#FF6B35"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/secondary_button_background"
+                    android:stateListAnimator="@null"/>
+
+                <Button
+                    android:id="@+id/btn_capture_photo"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="📸  Camera"
+                    android:textColor="#FF6B35"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/secondary_button_background"
+                    android:stateListAnimator="@null"/>
+
+            </LinearLayout>
+
+            <!-- ─── LOCATION SECTION ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="#99AABB"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Location Display -->
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/input_background"
+                android:text="Location not fetched yet"
+                android:textColor="#555577"
+                android:textSize="13sp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Get Location Button -->
+            <Button
+                android:id="@+id/btn_get_location"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="📍  Get My Location"
+                android:textColor="#FF6B35"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/secondary_button_background"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- ─── ANIMAL TYPE SECTION ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animal Type"
+                android:textColor="#99AABB"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="10dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_animal_type"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/spinner_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="#1E1E2E"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- ─── PRIORITY SECTION ─── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Priority"
+                android:textColor="#99AABB"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="10dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_priority"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/spinner_background"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:popupBackground="#1E1E2E"
+                android:layout_marginBottom="28dp"/>
+
+            <!-- ─── SUBMIT BUTTON ─── -->
+            <Button
+                android:id="@+id/btn_submit_report"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Submit Report"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_background"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+
+        <!-- Bottom padding -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,66 @@
+### Reporter Dashboard Data
+`GET /api/dashboard/reporter/1`
+
+```json
+{
+  "profile": {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "contact": "1234567890",
+    "role": "REPORTER"
+  },
+  "reports": [
+    {
+      "report": {
+        "id": 1,
+        "animalName": "Stray Dog",
+        "location": "Main Street, Central Park",
+        "description": "Injured leg, needs immediate help.",
+        "status": "IN_PROGRESS",
+        "reportDate": "2024-04-22T10:00:00"
+      },
+      "rescueDetails": {
+        "volunteerName": "Alice Smith",
+        "rescueDate": "2024-04-22T11:30:00",
+        "statusUpdates": "Reached location, dog is friendly but scared.",
+        "outcome": "UNDER_TREATMENT",
+        "notes": "Dog moved to Vet Clinic."
+      }
+    }
+  ]
+}
+```
+
+### Volunteer Dashboard Data
+`GET /api/dashboard/volunteer/2`
+
+```json
+{
+  "profile": {
+    "id": 2,
+    "name": "Alice Smith",
+    "email": "alice@example.com",
+    "contact": "0987654321",
+    "role": "VOLUNTEER"
+  },
+  "stats": {
+    "totalRescues": 1,
+    "activeRescues": 1,
+    "completedRescues": 0
+  },
+  "rescueTasks": [
+    {
+      "id": 1,
+      "report": {
+        "id": 1,
+        "animalName": "Stray Dog",
+        "location": "Main Street, Central Park",
+        "status": "IN_PROGRESS"
+      },
+      "rescueDate": "2024-04-22T11:30:00",
+      "outcome": "UNDER_TREATMENT"
+    }
+  ]
+}
+```

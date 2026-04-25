@@ -1,0 +1,149 @@
+I have a React + Spring Boot project called "Paw Alert".
+
+Problem:
+My dashboard UI is visible, but when I click the profile icon (top right), the Profile View does NOT open. The navigation is not working.
+
+I do NOT want general suggestions. I want step-by-step debugging and exact fixes.
+
+### Debug the issue in this strict order:
+
+#### 1. Check Profile Icon Click Handling
+
+* Verify if the profile icon has an onClick handler
+* Ensure it is using:
+
+  * useNavigate() from react-router-dom
+* Example expected:
+  onClick={() => navigate("/profile")}
+
+If missing → fix it
+
+---
+
+#### 2. Check React Router Setup (CRITICAL)
+
+* Open App.jsx
+* Verify:
+
+  * BrowserRouter is used
+  * Routes and Route are properly defined
+* Ensure this route exists:
+  <Route path="/profile" element={<Profile />} />
+
+If missing → add it
+
+---
+
+#### 3. Check Profile Component
+
+* Verify Profile.jsx exists
+* Ensure:
+
+  * It is exported properly
+  * It returns valid JSX (not empty/null)
+
+If missing → create it
+
+---
+
+#### 4. Check Navigation Errors
+
+* Inspect browser console (F12)
+* Look for:
+
+  * Route not found errors
+  * navigate is undefined
+  * Component not imported
+
+Fix all errors with exact code
+
+---
+
+#### 5. Check Import Issues
+
+* Ensure:
+  import { useNavigate } from "react-router-dom";
+* Ensure Profile component is correctly imported in App.jsx
+
+---
+
+#### 6. Check Path Issues
+
+* Verify correct path:
+  "/profile" (not "profile" or wrong casing)
+* Ensure no typo mismatch
+
+---
+
+#### 7. Output Required
+
+* Identify the EXACT root cause (not guesses)
+* Provide FIXED code for:
+
+  * Dashboard (profile icon click)
+  * App.jsx (routing)
+  * Profile.jsx (component)
+* Ensure working navigation end-to-end
+
+Do not skip steps. Do not give generic advice. Debug like a real developer.
+### Profile API Response (Volunteer)
+`GET /api/user/profile/2`
+
+```json
+{
+  "profile": {
+    "id": 2,
+    "name": "Alice Smith",
+    "email": "alice@example.com",
+    "password": "password123",
+    "role": "VOLUNTEER",
+    "contact": "0987654321"
+  },
+  "rescues": [
+    {
+      "id": 1,
+      "report": {
+        "id": 1,
+        "animalName": "Stray Dog",
+        "location": "Main Street, Central Park",
+        "status": "IN_PROGRESS"
+      },
+      "rescueDate": "2024-04-22T11:30:00",
+      "outcome": "UNDER_TREATMENT"
+    }
+  ],
+  "stats": {
+    "total": 1,
+    "active": 1,
+    "completed": 0
+  }
+}
+```
+
+### Profile API Response (Reporter)
+`GET /api/user/profile/1`
+
+```json
+{
+  "profile": {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "role": "REPORTER",
+    "contact": "1234567890"
+  },
+  "reports": [
+    {
+      "id": 1,
+      "animalName": "Stray Dog",
+      "location": "Main Street, Central Park",
+      "status": "IN_PROGRESS"
+    }
+  ],
+  "stats": {
+    "total": 1,
+    "active": 1,
+    "completed": 0
+  }
+}
+```

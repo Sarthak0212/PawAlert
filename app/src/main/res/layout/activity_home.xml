@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0F0F1A"
+    android:gravity="center"
+    android:padding="28dp">
+
+    <!-- Logo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🐾"
+        android:textSize="72sp"
+        android:gravity="center"/>
+
+    <!-- Welcome Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Welcome to PawAlert"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#FF6B35"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"/>
+
+    <!-- Username Display -->
+    <TextView
+        android:id="@+id/tv_home_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Loading user..."
+        android:textSize="14sp"
+        android:textColor="#99AABB"
+        android:gravity="center"/>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="60dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="28dp"
+        android:background="#FF6B35"/>
+
+    <!-- Report Animal Button -->
+    <Button
+        android:id="@+id/btn_report_animal"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="🚨  Report an Animal"
+        android:textColor="#FF6B35"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:background="@drawable/secondary_button_background"
+        android:stateListAnimator="@null"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Logout"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_background"
+        android:stateListAnimator="@null"/>
+
+</LinearLayout>

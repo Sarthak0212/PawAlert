@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Internet access (required for Firebase) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Network state (to check connectivity before Firebase calls) -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Location permissions (for reporting stray animal location) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Post notifications (Android 13+ requires explicit permission) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Camera (for capturing animal photos in alerts) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PawALert">
+
+        <!-- LoginSelectionActivity: App entry point -->
+        <activity
+            android:name=".LoginSelectionActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LoginActivity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+
+        <!-- AdminLoginActivity -->
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="false" />
+
+        <!-- AdminHomeActivity -->
+        <activity
+            android:name=".AdminHomeActivity"
+            android:exported="false" />
+
+        <!-- RegisterActivity -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"/>
+
+        <!-- HomeActivity -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"/>
+
+        <!-- ReportActivity: Submit animal distress/injury reports -->
+        <activity
+            android:name=".ReportActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <!-- ReporterHomeActivity: Dashboard for Reporter-role users -->
+        <activity
+            android:name=".ReporterHomeActivity"
+            android:exported="false"/>
+
+        <!-- VolunteerHomeActivity: Dashboard for Volunteer-role users -->
+        <activity
+            android:name=".VolunteerHomeActivity"
+            android:exported="false"/>
+
+        <!-- ReportDetailActivity: Full detail view of a single report -->
+        <activity
+            android:name=".ReportDetailActivity"
+            android:exported="false"/>
+
+        <!-- MainActivity: Firebase status/debug screen -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"/>
+
+        <!-- InboxActivity: Display personal notifications -->
+        <activity
+            android:name=".InboxActivity"
+            android:exported="false"
+            android:label="Inbox"
+            android:parentActivityName=".MainActivity"/>
+
+        <!-- ProfileActivity: User profile and statistics -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="Profile" />
+
+        <!--
+            Firebase Cloud Messaging Service
+            Handles token refresh and foreground push notifications.
+        -->
+        <service
+            android:name=".services.PawAlertMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!--
+            Google Maps API Key
+            IMPORTANT: Replace YOUR_MAPS_API_KEY_HERE with your actual key from
+            Google Cloud Console → APIs & Services → Credentials.
+            Never commit the real key to version control — use local.properties instead.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_MAPS_API_KEY_HERE" />
+
+        <!--
+            FileProvider: exposes a temp file URI to the system camera app
+            so it can write the captured photo without exposing a raw file:// URI.
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardBackgroundColor="#1E1E2E"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ── Animal image (full-width, top of card) ── -->
+        <ImageView
+            android:id="@+id/iv_card_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:src="@android:drawable/ic_menu_camera"
+            android:scaleType="centerCrop"
+            android:contentDescription="Animal photo"/>
+
+        <!-- ── Details section ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <!-- Row 1: Animal type + priority badge -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tv_card_animal_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="—"
+                    android:textColor="#EAEAEA"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tv_card_priority"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NORMAL"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:background="@drawable/badge_normal"/>
+
+            </LinearLayout>
+
+            <!-- Row 2: Location -->
+            <TextView
+                android:id="@+id/tv_card_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📍 —"
+                android:textColor="#99AABB"
+                android:textSize="12sp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Thin divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#2A2A3E"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Row 3: Status label + spinner -->
+            <LinearLayout
+                android:id="@+id/ll_status_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Status"
+                    android:textColor="#AABBCC"
+                    android:textSize="13sp"/>
+
+                <Spinner
+                    android:id="@+id/spinner_status"
+                    android:layout_width="170dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/status_spinner_bg"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="4dp"/>
+
+            </LinearLayout>
+
+            <!-- Row 3.5: Accept / Reject buttons (for OPEN reports) -->
+            <LinearLayout
+                android:id="@+id/ll_action_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:weightSum="2"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btn_accept"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="Accept"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#4CAF50"/>
+
+                <Button
+                    android:id="@+id/btn_reject"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="Reject"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#F44336"/>
+            </LinearLayout>
+
+            <!-- Row 4: Get Directions button -->
+            <Button
+                android:id="@+id/btn_get_directions"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="🗺  Get Directions"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_directions_bg"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

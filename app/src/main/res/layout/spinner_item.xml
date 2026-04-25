@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    spinner_item.xml
+    Layout for the SELECTED item displayed inside the closed Spinner widget.
+    Text is white so it is readable on the app's dark (#0F0F1A / #1E1E2E) backgrounds.
+-->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:textColor="#FFFFFF"
+    android:textSize="14sp"
+    android:ellipsize="end"
+    android:maxLines="1"/>

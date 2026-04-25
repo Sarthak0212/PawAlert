@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    spinner_dropdown_item.xml
+    Layout for each ROW inside the open dropdown list.
+    Dark background (#1E1E2E) with white text gives clear contrast on the dark UI.
+    A subtle bottom divider visually separates rows.
+-->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    android:background="#1E1E2E"
+    android:textColor="#EAEAEA"
+    android:textSize="14sp"
+    android:ellipsize="end"
+    android:maxLines="1"/>

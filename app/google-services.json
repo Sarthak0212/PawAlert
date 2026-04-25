@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "609323086251",
+    "project_id": "pawalert-6a4b3",
+    "storage_bucket": "pawalert-6a4b3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609323086251:android:b29c71c8b695b6795de2ee",
+        "android_client_info": {
+          "package_name": "com.example.pawalert"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHBy9YETtMuXbvsDdZEVgbBPrgeWO0gHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
